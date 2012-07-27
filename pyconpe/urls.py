@@ -7,6 +7,9 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^', include('core.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('accounts.urls')),
+    url(r'', include('social_auth.urls')),
+
 )
 
 if settings.DEBUG:
