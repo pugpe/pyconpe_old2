@@ -41,7 +41,11 @@
                         </div>
                         <div class="span-two-thirds" style="width:600px; text-align:right;">
                             <h1 style="border:none; padding-bottom:0;">PyCon-PE Come&ccedil;ou!</h1>
-                            <p>Faça o login com o <a href="{% url socialauth_begin 'twitter' %}">Twitter</a></p>
+                            {% if user.is_authenticated %}
+                                <p>Olá, {{ user.first_name }}</p>
+                            {% else %}
+                                <p>Faça o login com o <a href="{% url socialauth_begin 'twitter' %}">Twitter</a></p>
+                            {% endif %}
                             <p>De 24 a 26 de Agosto</p>
                             <p>Recife, PE</p>
                         </div>
