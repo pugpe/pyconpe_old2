@@ -1,38 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <a style="background:url('{{STATIC_URL}}img/logoPyCon-PE.png') no-repeat; padding-left:45px;" class="brand" href="/">PyCon-PE</a>
-          
-          <ul class="nav">
-            
-            <li><a href="#"><span>Sobre</span></a></li>
-            <li><a href="#"><span>Agenda</span></a></li>
-            <li><a href="#"><span>Registre-se</span></a></li>
-            <li><a href="#"><span>Colaboradores</span></a></li>
-            <li><a href="#"><span>Patrocinadores</span></a></li>
-                        
-          </ul>
-          
-          <ul class="nav secondary-nav">
-              <li class="dropdown">
-                  <a class="dropdown-toggle">Site Language</a>
-                  <ul class="dropdown-menu">
-                      <li><a class="cn">简体中文</a></li>
-                      <li class="divider"></li>
-                      <li><a class="en">English</a></li>
-                  </ul>
-              </li>
-          </ul>
-        </div><!--END container-->
-      </div><!--END fill-->
-    </div><!--END topbar-->
-        
-    <div class="container" id="main_container">
-        <!--[if lt IE 7]><div style=" clear: both; height: 59px; padding:0 0 0 15px; position: relative;"> <a target="_blank" href="http://windows.microsoft.com/zh-CN/internet-explorer/downloads/ie?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.cn/img/banner/upgrade.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
-        
-
             <div id="content">
                 <div class="hero-content" id="first-hero">
                     <div class="row show-grid">
@@ -41,11 +8,6 @@
                         </div>
                         <div class="span-two-thirds" style="width:600px; text-align:right;">
                             <h1 style="border:none; padding-bottom:0;">PyCon-PE Come&ccedil;ou!</h1>
-                            {% if user.is_authenticated %}
-                                <p>Olá, {{ user.first_name }}</p>
-                            {% else %}
-                                <p>Faça o login com o <a href="{% url socialauth_begin 'twitter' %}">Twitter</a></p>
-                            {% endif %}
                             <p>De 24 a 26 de Agosto</p>
                             <p>Recife, PE</p>
                         </div>
@@ -161,22 +123,4 @@
               </ol>
             </div>
           </div>
-
-            <div id="footer">
-                PyCon-PE<br/>Site built by <a href="http://topgeek.org">PUG-PE</a> using <a href="http://www.jquery.com/">jQuery</a>, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>, <a href="http://www.djangoproject.com/">Django</a> as Web Server.<br/>
-            </div><!--END footer-->
-        </div><!--END container-->
-    <script type="text/javascript">
-
-     var _gaq = _gaq || [];
-     _gaq.push(['_setAccount', 'UA-26284394-1']);
-     _gaq.push(['_trackPageview']);
-
-     (function() {
-       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
-    </script>
 {% endblock %}
