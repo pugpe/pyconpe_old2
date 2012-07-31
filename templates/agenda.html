@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Agenda</h1>
+<table class="zebra-striped">
+        <tr>
+            <th>Data</th>
+            <th>Hor&aacute;rio</th>
+            <th>T&iacute;tulo</th>
+            <th>Palestrante</th>
+            <th>Resumo</th>
+        </tr>
+        <tr>
+            <td rowspan="3" class="date">23 de Agosto, 2012</td>
+        </tr>
+        <tr>
+            <td>19:00-19:15</td>
+            <td>Titulo da palestra</td>
+            <td style="width:130px;">Palestrante</td>
+            <td>Resumo da palestra</td>
+        </tr>
+        <tr>
+            <td>19:00-19:15</td>
+            <td>Titulo da palestra</td>
+            <td style="width:130px;">Palestrante</td>
+            <td>Resumo da palestra</td>
+        </tr>
+</table>
+{% endblock %}
