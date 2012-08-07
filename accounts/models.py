@@ -12,6 +12,7 @@ OPT = {'null': True, 'blank': True}
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
 
+    name = models.CharField(_(u'Nome'), max_length=100, **OPT)
     about = models.TextField(_(u'Sobre'))
     site = models.URLField(_(u'Site'), **OPT)
     occupation = models.CharField(_(u'Ocupação'), max_length=100, **OPT)

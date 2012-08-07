@@ -35,27 +35,29 @@
             
             <li><a href="#"><span>Sobre</span></a></li>
             <li><a href="{% url core.views.schedule %}"><span>Agenda</span></a></li>
-            <!--<li><a href="{% url accounts.views.register %}"><span>Registre-se</span></a></li>-->
             <li><a href="#"><span>Colaboradores</span></a></li>
             <li><a href="{% url core.views.sponsors %}"><span>Patrocinadores</span></a></li>
                         
           </ul>
           
+          {% if not user.is_authenticated %}
           <ul class="nav secondary-nav">
               <li>
-                  <a>Logar</a>
+                  <a href="{% url accounts.views.login %}">Logar</a>
               </li>
           </ul>
-          <!-- <ul class="nav secondary-nav">
+          {% else %}
+          <ul class="nav secondary-nav">
               <li class="dropdown">
-                  <a class="dropdown-toggle">Nome</a>
+                  <a class="dropdown-toggle">{{ user.email }}</a>
                   <ul class="dropdown-menu">
-                      <li><a>Perfil</a></li>
+                      <li><a href="{% url accounts.views.complete_profile %}">Perfil</a></li>
                       <li class="divider"></li>
                       <li><a >Sair</a></li>
                   </ul>
               </li>
-          </ul> -->
+          </ul>
+          {% endif %}
         </div><!--END container-->
       </div><!--END fill-->
     </div><!--END topbar-->
