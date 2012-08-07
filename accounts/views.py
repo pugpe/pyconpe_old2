@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login
+from django.contrib.auth import login as auth_login, logout as auth_logout
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
@@ -43,7 +43,7 @@ def login(request):
                 redirect_to = settings.LOGIN_REDIRECT_URL
 
             # Okay, security checks complete. Log the user in.
-            login(request, auth_form.get_user())
+            auth_login(request, auth_form.get_user())
 
             if request.session.test_cookie_worked():
                 request.session.delete_test_cookie()
@@ -56,6 +56,11 @@ def login(request):
 
     ctx = {'form': form, 'auth_form': auth_form}
     return render(request, 'accounts/register.html', ctx)
+
+
+def logout(request):
+    auth_logout(request)
+    return redirect('/')
 
 
 @login_required
