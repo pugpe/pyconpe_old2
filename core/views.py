@@ -6,3 +6,6 @@ def index(request):
 
 def schedule(request):
     return render(request, 'agenda.html', {})
+
+def sponsors(request):
+    return render(request, 'patrocinadores.html', {})
