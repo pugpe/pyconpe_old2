@@ -55,7 +55,7 @@ def login(request):
     request.session.set_test_cookie()
 
     ctx = {'form': form, 'auth_form': auth_form}
-    return render(request, 'accounts/register.html', ctx)
+    return render(request, 'accounts/login.html', ctx)
 
 
 def logout(request):
