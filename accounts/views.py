@@ -1,9 +1,19 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
 
 from .models import UserProfile
-from .forms import UserProfileForm
+from .forms import UserProfileForm, RegistrationForm
+
+
+def register(request):
+    form = RegistrationForm(request.POST or None)
+    if form.is_valid():
+        form.register(request)
+        return redirect(reverse('accounts.views.complete_profile'))
+
+    return render(request, 'accounts/register.html', {'form': form})
 
 
 @login_required
