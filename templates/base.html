@@ -35,22 +35,27 @@
             
             <li><a href="#"><span>Sobre</span></a></li>
             <li><a href="{% url core.views.schedule %}"><span>Agenda</span></a></li>
-            <li><a href="{% url accounts.views.register %}"><span>Registre-se</span></a></li>
+            <!--<li><a href="{% url accounts.views.register %}"><span>Registre-se</span></a></li>-->
             <li><a href="#"><span>Colaboradores</span></a></li>
             <li><a href="{% url core.views.sponsors %}"><span>Patrocinadores</span></a></li>
                         
           </ul>
           
           <ul class="nav secondary-nav">
-              <li class="dropdown">
-                  <a class="dropdown-toggle">Lingua</a>
-                  <ul class="dropdown-menu">
-                      <li><a class="pt-br">Portugues</a></li>
-                      <li class="divider"></li>
-                      <li><a class="en">English</a></li>
-                  </ul>
+              <li>
+                  <a>Logar</a>
               </li>
           </ul>
+          <!-- <ul class="nav secondary-nav">
+              <li class="dropdown">
+                  <a class="dropdown-toggle">Nome</a>
+                  <ul class="dropdown-menu">
+                      <li><a>Perfil</a></li>
+                      <li class="divider"></li>
+                      <li><a >Sair</a></li>
+                  </ul>
+              </li>
+          </ul> -->
         </div><!--END container-->
       </div><!--END fill-->
     </div><!--END topbar-->
@@ -59,7 +64,7 @@
         <!--[if lt IE 7]><div style=" clear: both; height: 59px; padding:0 0 0 15px; position: relative;"> <a target="_blank" href="http://windows.microsoft.com/zh-CN/internet-explorer/downloads/ie?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.cn/img/banner/upgrade.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
         {% block content %}
         {% endblock %}
-         <div id="footer">
+         <div id="footer" style="position='fixed';">
                 PyCon-PE<br/>Site built by <a href="http://topgeek.org">PUG-PE</a> using <a href="http://www.jquery.com/">jQuery</a>, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>, <a href="http://www.djangoproject.com/">Django</a> as Web Server.<br/>
             </div><!--END footer-->
     </div><!--END container-->
