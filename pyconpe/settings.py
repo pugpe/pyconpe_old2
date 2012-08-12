@@ -10,6 +10,7 @@ PROJECT_ROOT = abspath(join(dirname(__file__), "../"))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+SOCIAL_AUTH_RAISE_EXCEPTIONS = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -133,15 +134,21 @@ INSTALLED_APPS = (
 AUTHENTICATION_BACKENDS = (
     'social_auth.backends.twitter.TwitterBackend',
     'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.contrib.github.GithubBackend',
     'django.contrib.auth.backends.ModelBackend',
+
 )
 
-TWITTER_CONSUMER_KEY         = ''
-TWITTER_CONSUMER_SECRET      = ''
-FACEBOOK_APP_ID              = ''
-FACEBOOK_API_SECRET          = ''
+TWITTER_CONSUMER_KEY = ''
+TWITTER_CONSUMER_SECRET = ''
+FACEBOOK_APP_ID = ''
+FACEBOOK_API_SECRET = ''
+GITHUB_APP_ID = ''
+GITHUB_API_SECRET = ''
 
-LOGIN_URL          = '/login-form/'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+
+LOGIN_URL          = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_ERROR_URL    = '/login-error/'
 SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/accounts/profile/'
